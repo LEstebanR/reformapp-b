@@ -4,6 +4,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const categories = require('./routes/categories');
 const user = require('./routes/user');
+const reform = require('./routes/reform.js');
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(cors());
 app.use(express.json());
 app.use(categories);
 app.use(user)
+app.use(reform)
 
 const uri = process.env.ATLAS_URI;
 

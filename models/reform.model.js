@@ -1,30 +1,34 @@
 const mongoose = require('mongoose');
 
-const userSchema = mongoose.Schema(
+const reformSchema = mongoose.Schema(
   {
     description: {
       type: String,
-      required: true,
     },
     photo: {
       type: String,
-      required: true,
     },
     location: {
       type: String,
-      required: true,
     },
     owner:{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
-      required: true,
+      type: String,
     },
     options:{
       type: Array,
     
     },
+    state:{
+      type: Object,
+      default: {
+        open: true,
+        contract: false,
+        pay: false,
+        done: false,
+      }
+    },
 })
 
-const User = mongoose.model('User', userSchema);
+const Reform = mongoose.model('Reform', reformSchema);
 
-module.exports = User;
+module.exports = Reform;
