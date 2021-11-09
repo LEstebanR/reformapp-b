@@ -25,7 +25,10 @@ const reformSchema = mongoose.Schema(
         contract: false,
         pay: false,
         done: false,
-      }
+      },
+    },
+    category:{
+      type: String,
     },
 })
 

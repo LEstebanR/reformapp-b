@@ -20,13 +20,14 @@ const getReform = async (req, res) => {
 
 const createReform = async(req, res, next) => {
   try {
-    const { description, photo, location, owner } = req.body
+    const { description, photo, location, owner, category } = req.body
     const reform =  await Reform.create({
       description,
       photo,
       location,
       owner : owner.authId,
       options: [],
+      category,
       state: {
         open: true,
         contract: false,
