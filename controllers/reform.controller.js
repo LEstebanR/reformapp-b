@@ -20,8 +20,9 @@ const getReform = async (req, res) => {
 
 const createReform = async(req, res, next) => {
   try {
-    const { description, photo, location, owner, category } = req.body
+    const { description, photo, location, owner, category, name } = req.body
     const reform =  await Reform.create({
+      name,
       description,
       photo,
       location,

@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 
 const reformSchema = mongoose.Schema(
   {
+    name: {
+      type: String,
+    },
     description: {
       type: String,
     },
