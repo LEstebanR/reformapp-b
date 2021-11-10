@@ -17,7 +17,10 @@ const reformSchema = mongoose.Schema(
     category:{
       type: String,
     },
-    owner:{
+    ownerId:{
+      type: String,
+    },
+    ownerName:{
       type: String,
     },
     options:{

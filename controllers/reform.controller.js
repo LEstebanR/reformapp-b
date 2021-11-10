@@ -5,7 +5,7 @@ const mongoosse = require('mongoose')
 const getReform = async (req, res) => {
   try {
     const {id} = req.params
-    const reform = await Reform.find({owner: id})
+    const reform = await Reform.find({ownerId: id})
     res.status(200).json({
       message: 'Reform found',
       reform
@@ -36,14 +36,15 @@ const getReformbyId = async (req, res) => {
 
 const createReform = async(req, res, next) => {
   try {
-    const { title, description, photo, location, category, owner } = req.body
+    const { title, description, photo, location, category, ownerId, ownerName } = req.body
     const reform =  await Reform.create({
       title,
       description,
       photo,
       location,
       category,
-      owner,
+      ownerId,
+      ownerName,
       options: [],
       state: {
         open: true,
