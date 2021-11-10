@@ -18,6 +18,22 @@ const getReform = async (req, res) => {
   }
 }
 
+const getReformbyId = async (req, res) => {
+  try {
+    const {id} = req.params
+    const reform = await Reform.find({_id: id})
+    res.status(200).json({
+      message: 'Reform found',
+      reform
+    })
+  } catch (error) {
+    res.status(400).json({
+      message: 'Error getting reform',
+      error
+    })
+  }
+}
+
 const createReform = async(req, res, next) => {
   try {
     const { title, description, photo, location, category, owner } = req.body
@@ -51,4 +67,4 @@ const createReform = async(req, res, next) => {
 
 }
 
-module.exports = {getReform, createReform}
+module.exports = {getReform, getReformbyId, createReform}
