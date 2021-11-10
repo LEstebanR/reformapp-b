@@ -9,7 +9,12 @@ const searchCompany = async (req, res) => {
       {$or: [{name:{$in: regex}}, {specialty: {$in: regex}}]}]})
       .skip((page-1)*9)
       .limit(9)
-    res.status(200).json({data})
+    const pages = parseInt(data.length/9)
+    let count
+    pages > 1 ? count = pages : count = 1
+
+    res.status(200).json({data, count})
+    
     
   } catch (error) {
     console.error(error);
