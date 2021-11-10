@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const reformSchema = mongoose.Schema(
   {
-    name: {
+    title: {
       type: String,
     },
     description: {
@@ -12,6 +12,9 @@ const reformSchema = mongoose.Schema(
       type: String,
     },
     location: {
+      type: String,
+    },
+    category:{
       type: String,
     },
     owner:{
@@ -29,10 +32,8 @@ const reformSchema = mongoose.Schema(
         pay: false,
         done: false,
       },
-    },
-    category:{
-      type: String,
-    },
+    }
+
 })
 
 const Reform = mongoose.model('Reform', reformSchema);
