@@ -40,7 +40,6 @@ const createReform = async(req, res, next) => {
       message: 'Reform created',
       reform
     })
-    console.log (owner)
     next()
   } catch (error) {
     console.error (error)

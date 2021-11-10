@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const categories = require('./routes/categories');
 const user = require('./routes/user');
 const reform = require('./routes/reform.js');
+const searchCompany = require('./routes/searchCompany.js');
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use(categories);
 app.use(user)
 app.use(reform)
+app.use(searchCompany)
 
 const uri = process.env.ATLAS_URI;
 
