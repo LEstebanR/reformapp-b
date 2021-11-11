@@ -6,6 +6,7 @@ const categories = require('./routes/categories');
 const user = require('./routes/user');
 const reform = require('./routes/reform.js');
 const searchCompany = require('./routes/searchCompany.js');
+const invitation = require('./routes/invitation.js');
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(categories);
 app.use(user)
 app.use(reform)
 app.use(searchCompany)
+app.use(invitation)
 
 const uri = process.env.ATLAS_URI;
 
