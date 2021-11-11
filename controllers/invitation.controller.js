@@ -50,4 +50,15 @@ const InvitationsAccepted = async(req, res) => {
   
 }
 
-module.exports =  {createInvitation, InvitationsAccepted};
+const InvitationsPending = async(req, res) => {
+  try {
+    const id = req.params.id;
+    const data = await Invitations.find({$and: [{companyId: id}, {status: 'pending'}]})
+    res.status(200).json({data})
+  } catch (error) {
+    res.status(500).send(error)
+  }
+  
+}
+
+module.exports =  {createInvitation, InvitationsAccepted, InvitationsPending};
