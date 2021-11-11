@@ -19,6 +19,12 @@ const invitationsSchema = mongoose.Schema({
   reformDescription:{ 
     type: String,
   },
+  reformPhoto:{
+    type: String,
+  },
+  reformId:{
+    type: String,
+  },
   status: {
     type: String,
     

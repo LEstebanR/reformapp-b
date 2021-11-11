@@ -3,7 +3,6 @@ const Invitations = require("../models/invitations.model.js");
 
 const createInvitation = async(req, res, next) => {
   try {
-    console.log(req.body)
     const {
       companyId, 
       companyName, 
