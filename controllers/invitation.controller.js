@@ -5,24 +5,24 @@ const createInvitation = async(req, res, next) => {
   try {
     console.log(req.body)
     const {
-      ownerId, 
-      ownerName, 
       companyId, 
       companyName, 
-      reformTitle, 
+      ownerId, 
+      ownerName, 
       reformDescription,
-      reformPhoto,
       reformId,
+      reformPhoto,
+      reformTitle, 
     } = req.body;
     const invitation = await Invitations.create({
-      ownerId,
-      ownerName,
       companyId,
       companyName,
-      reformTitle,
+      ownerId,
+      ownerName,
       reformDescription,
-      reformPhoto,
       reformId,
+      reformPhoto,
+      reformTitle,
       status: 'pending',
     })
     next()
