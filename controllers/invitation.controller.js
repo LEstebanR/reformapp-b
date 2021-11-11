@@ -4,7 +4,16 @@ const Invitations = require("../models/invitations.model.js");
 const createInvitation = async(req, res, next) => {
   try {
     console.log(req.body)
-    const {ownerId, ownerName, companyId, companyName, reformTitle, reformDescription} = req.body;
+    const {
+      ownerId, 
+      ownerName, 
+      companyId, 
+      companyName, 
+      reformTitle, 
+      reformDescription,
+      reformPhoto,
+      reformId,
+    } = req.body;
     const invitation = await Invitations.create({
       ownerId,
       ownerName,
@@ -12,6 +21,8 @@ const createInvitation = async(req, res, next) => {
       companyName,
       reformTitle,
       reformDescription,
+      reformPhoto,
+      reformId,
       status: 'pending',
     })
     next()
