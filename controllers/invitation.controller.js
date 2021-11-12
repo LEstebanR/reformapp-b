@@ -61,4 +61,14 @@ const InvitationsPending = async(req, res) => {
   
 }
 
-module.exports =  {createInvitation, InvitationsAccepted, InvitationsPending};
+const updateInvitation = async(req, res) => {
+  try {
+    const {id, status} = req.body;
+    await Invitations.updateOne({_id: id}, {status})
+    res.status(200).json({message: 'Invitation updated successfully'})
+  } catch (error) {
+    res.status(500).send(error)
+  }
+}
+
+module.exports =  {createInvitation, InvitationsAccepted, InvitationsPending, updateInvitation};
