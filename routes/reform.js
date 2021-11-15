@@ -5,6 +5,7 @@ const app = express.Router();
 
 app.get('/reform/:id', Controller.getReform );
 app.get('/reformbyid/:id', Controller.getReformbyId );
+app.get('/reformbytype/:type', Controller.getReformbyType );
 app.post('/reform', Controller.createReform );
 
 
