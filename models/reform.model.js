@@ -25,7 +25,18 @@ const reformSchema = mongoose.Schema(
     },
     options:{
       type: Array,
-    
+    },
+    adress:{
+      type: String,
+    },
+    city:{
+      type: String,
+    },
+    country:{
+      type: String,
+    },
+    mark:{
+      type: Array,
     },
     state:{
       type: Object,

@@ -36,7 +36,7 @@ const getReformbyId = async (req, res) => {
 
 const createReform = async(req, res, next) => {
   try {
-    const { title, description, photo, location, category, ownerId, ownerName } = req.body
+    const { title, description, photo, location, category, ownerId, ownerName, adress, city, country, mark } = req.body
     const reform =  await Reform.create({
       title,
       description,
@@ -45,6 +45,10 @@ const createReform = async(req, res, next) => {
       category,
       ownerId,
       ownerName,
+      adress,
+      city,
+      country,
+      mark,
       options: [],
       state: {
         open: true,
