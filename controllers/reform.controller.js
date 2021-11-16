@@ -92,7 +92,6 @@ const updateReform = async(req, res, next) => {
   try {
     const { id, name, avatar, propuse } = req.body
     const propuesta= {name : name, avatar : avatar, propuse: propuse}
-    console.log(propuesta)
     await Reform.updateOne({ _id: id }, { $push: { options: propuesta } })
     res.status(200).json({
       message: 'Reform updated',
